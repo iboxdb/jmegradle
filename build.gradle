@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+println project.projectDir
+
+description = 'jMonkeyEngine Gui'
+    group = 'Demo'
+
+mainClassName = 'demo.jmegradle.GuiDemo'
+
+repositories {
+   
+    maven {                                                                                                                                                                                                    
+        url "file:${project.projectDir}/libs/repository"                                                                                                                                           
+    }   
+
+    maven {
+        url 'https://dl.bintray.com/jmonkeyengine/org.jmonkeyengine'
+    }
+
+    jcenter()
+}
+
+dependencies {
+ 
+    implementation 'iBoxDB:iBoxDB:2.27'  
+
+    implementation 'org.jmonkeyengine:jme3-core:3.3.2-stable'
+    implementation 'org.jmonkeyengine:jme3-desktop:3.3.2-stable'
+    implementation 'org.jmonkeyengine:jme3-lwjgl:3.3.2-stable'
+
+    implementation 'com.simsilica:lemur:1.13.0'
+    implementation 'com.simsilica:lemur-proto:1.11.0'
+
+  //  implementation 'org.codehaus.groovy:groovy-all:3.0.3'
+
+}
+
