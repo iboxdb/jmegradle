@@ -14,4 +14,7 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 *.so
+*.ibx
+*.swp
+
 

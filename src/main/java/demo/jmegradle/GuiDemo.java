@@ -47,13 +47,12 @@ public class GuiDemo extends SimpleApplication {
         Label la = new Label("Move the Camera");
         myWindow.addChild(la);
         Button clickMe = myWindow.addChild(new Button("Click Me"));
-        
-        
+
         clickMe.addClickCommands((Command<Button>) (Button source) -> {
-            try (Box box = App.auto.cube()) {
+            try (Box box = App.cube()) {
                 Ason ason = box.bind("Table", 1L).replace(Ason.class);
-                Long l = get(ason, Count);
-                set(ason, Count, l == null ? 1 : l + 1L);
+                Long l = get(ason, Count, 0L);
+                set(ason, Count, l + 1L);
                 CommitResult cr = box.commit();
             }
             String text = App.auto.selectCount("from Table") + " , ";
@@ -72,7 +71,7 @@ public class GuiDemo extends SimpleApplication {
     public void destroy() {
         App.auto.getDatabase().close();
         super.destroy();
-        
+
     }
 
     public static Mesh createBox(float x, float y, float z) {
