@@ -15,9 +15,9 @@ repositories {
         url 'https://github.com/iboxdb/teadb/raw/repository'
     }   
 
-    //using local iboxdb jar
+    //using local iBoxDB jar
     //maven {
-    //  url "file:${project.projectDir}/libs/repository"                                                                                            
+    //  url "file:${project.projectDir}/libs/repository"
     //}
 
     maven {
