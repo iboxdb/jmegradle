@@ -10,10 +10,15 @@ description = 'jMonkeyEngine Gui'
 mainClassName = 'demo.jmegradle.GuiDemo'
 
 repositories {
-   
-    maven {                                                                                                                                                                                                    
-        url "file:${project.projectDir}/libs/repository"                                                                                                                                           
+
+    maven {
+        url 'https://github.com/iboxdb/teadb/raw/repository'
     }   
+
+    //using local iboxdb jar
+    //maven {
+    //  url "file:${project.projectDir}/libs/repository"                                                                                            
+    //}
 
     maven {
         url 'https://dl.bintray.com/jmonkeyengine/org.jmonkeyengine'
