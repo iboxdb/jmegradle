@@ -1,6 +1,6 @@
 package demo.jmegradle;
 
-import iBoxDB.LocalServer.*;
+import iboxdb.localserver.*;
 import java.io.File;
 
 public class App {
@@ -13,7 +13,7 @@ public class App {
 
     private static AutoBox config() {
 
-        String path = "../jmedemodata";
+        String path = "../jmedemodata3";
         new File(path).mkdirs();
         DB.root(path);
         DB db = new DB();
@@ -24,23 +24,10 @@ public class App {
 
     }
 
-    public static void set(Ason ason, String name, Object value) {
-        Object old = ason.get(name);
-        if (old != null && value != null) {
-            value = new Variant(value).as(old);
-        }
-        ason.put(name, value);
+    public static void destroy(){
+        auto.getDatabase().close();
     }
-
-    public static <T> T get(Ason ason, String name) {
-        return get(ason, name, null);
-    }
-
-    public static <T> T get(Ason ason, String name, T defaultValue) {
-        T re = (T) ason.get(name);
-        return re != null ? re : defaultValue;
-    }
-
+    
     public static final String Id = "Id";
     public static final String Count = "Count";
 

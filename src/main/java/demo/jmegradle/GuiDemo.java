@@ -1,6 +1,6 @@
 package demo.jmegradle;
 
-import iBoxDB.LocalServer.*;
+import iboxdb.localserver.*;
 import static demo.jmegradle.App.*;
 
 import com.jme3.app.SimpleApplication;
@@ -49,14 +49,17 @@ public class GuiDemo extends SimpleApplication {
         Button clickMe = myWindow.addChild(new Button("Click Me"));
 
         clickMe.addClickCommands((Command<Button>) (Button source) -> {
-            try (Box box = App.cube()) {
-                Ason ason = box.bind("Table", 1L).replace(Ason.class);
-                Long l = get(ason, Count, 0L);
-                set(ason, Count, l + 1L);
+            try (Box box = cube()) {
+                Ason ason = box.d("Table", 1L).replace(Ason.class);
+                Long l = ason.set(Count);
+                if (l == null) {
+                    l = 0L;
+                }
+                ason.set(Count, l + 1L);
                 CommitResult cr = box.commit();
             }
-            String text = App.auto.selectCount("from Table") + " , ";
-            text += App.auto.select("from Table").toString();
+            String text = auto.count("from Table") + " , ";
+            text += auto.select("from Table").toString();
             la.setText(text);
         });
 
@@ -69,7 +72,7 @@ public class GuiDemo extends SimpleApplication {
 
     @Override
     public void destroy() {
-        App.auto.getDatabase().close();
+        App.destroy();
         super.destroy();
 
     }
