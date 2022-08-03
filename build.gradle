@@ -15,14 +15,8 @@ repositories {
         url 'https://github.com/iboxdb/teadb/raw/repository'
     }   
 
-//mvn deploy:deploy-file -Dfile=iboxdb-3.0.jar -DgroupId=iboxdb -DartifactId=iboxdb -Dversion=3.0 -Dpackaging=jar -Durl=file:./repository/ -DrepositoryId=repository -DupdateReleaseInfo=true	
-    //using local iBoxDB jar
-    //maven {
-    //  url "file:${project.projectDir}/libs/repository"
-    //}
-
     maven {
-        url 'https://dl.bintray.com/jmonkeyengine/org.jmonkeyengine'
+        url 'https://repo1.maven.org/maven2'
     }
 
     jcenter()
@@ -30,7 +24,7 @@ repositories {
 
 dependencies {
  
-    implementation 'iboxdb:iboxdb:3.0'  
+    implementation 'iboxdb:iboxdb:3.5'  
 
     implementation 'org.jmonkeyengine:jme3-core:3.3.2-stable'
     implementation 'org.jmonkeyengine:jme3-desktop:3.3.2-stable'

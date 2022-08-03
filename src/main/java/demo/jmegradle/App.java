@@ -1,7 +1,8 @@
 package demo.jmegradle;
 
+import java.io.*;
+import com.jme3.system.*;
 import iboxdb.localserver.*;
-import java.io.File;
 
 public class App {
 
@@ -12,10 +13,18 @@ public class App {
     }
 
     private static AutoBox config() {
+        
+        ///mnt/sdcard/Android/data/<packagename>/files
+        //System.out.println(JmeSystem.getStorageFolder(JmeSystem.StorageFolderType.External).getAbsolutePath());
+        
+        ///data/data/<packagename>/app_
+        //System.out.println(JmeSystem.getStorageFolder(JmeSystem.StorageFolderType.Internal).getAbsolutePath());
 
-        String path = "../jmedemodata3";
-        new File(path).mkdirs();
-        DB.root(path);
+        File dir = JmeSystem.getStorageFolder(JmeSystem.StorageFolderType.Internal);
+        dir = new File(dir, "JME3_DATABASE");
+        dir.mkdir();
+        System.out.println(dir.getAbsolutePath());        
+        DB.root(dir.getAbsolutePath());
         DB db = new DB();
 
         db.getConfig().ensureTable(new Ason(Id, 0L), "Table");
@@ -24,10 +33,10 @@ public class App {
 
     }
 
-    public static void destroy(){
+    public static void destroy() {
         auto.getDatabase().close();
     }
-    
+
     public static final String Id = "Id";
     public static final String Count = "Count";
 
