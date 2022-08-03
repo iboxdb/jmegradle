@@ -1,13 +1,16 @@
 ### iBoxDB gradle example with jMonkey Engine
 
-setup in file **build.gradle**
+Setup in file **build.gradle**
+
+[build.gradle](build.gradle)
+
 
 ![](img/JMonkeyEngine3.png)
 
 
 #### Path 1 Run
 ```
-gradle-4.10.2/bin/gradle run
+gradle-{version}/bin/gradle run
 ```
 
 
@@ -21,11 +24,14 @@ gradle-4.10.2/bin/gradle run
 /home/user/.gradle/wrapper/dists/gradle-6.7-bin/efvqh8uyq79v2n7rcncuhu9sv/gradle-6.7/bin/gradle run
 ```
 
+#### using remote iBoxDB jar
 
-#### Caches Path
 ```
-/home/user/.gradle/caches/modules-2/files-2.1/iboxdb/iboxdb
+ maven {
+   url 'https://github.com/iboxdb/teadb/raw/repository'
+ } 
 ```
+
 
 #### using local iBoxDB jar
 
@@ -38,13 +44,9 @@ mvn deploy:deploy-file -Dfile=iboxdb-3.5.jar -DgroupId=iboxdb -DartifactId=iboxd
 ```
 
 
-#### using remote iBoxDB jar
 
+#### Caches Path
 ```
- maven {
-   url 'https://github.com/iboxdb/teadb/raw/repository'
- } 
+/home/user/.gradle/caches/modules-2/files-2.1/iboxdb/iboxdb
 ```
-
-
 

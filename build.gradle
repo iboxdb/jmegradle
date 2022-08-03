@@ -1,11 +1,10 @@
 apply plugin: 'java'
-apply plugin: 'jacoco'
 apply plugin: 'application'
 
 println project.projectDir
 
 description = 'jMonkeyEngine Gui'
-    group = 'Demo'
+group = 'Demo'
 
 mainClassName = 'demo.jmegradle.GuiDemo'
 
@@ -19,7 +18,6 @@ repositories {
         url 'https://repo1.maven.org/maven2'
     }
 
-    jcenter()
 }
 
 dependencies {
@@ -33,7 +31,7 @@ dependencies {
     implementation 'com.simsilica:lemur:1.16.0'
     implementation 'com.simsilica:lemur-proto:1.13.0'
 
-  //  implementation 'org.codehaus.groovy:groovy-all:3.0.3'
+    //implementation 'org.codehaus.groovy:groovy-all:3.0.3'
 
 }
 
