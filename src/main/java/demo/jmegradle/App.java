@@ -21,7 +21,8 @@ public class App {
         //System.out.println(JmeSystem.getStorageFolder(JmeSystem.StorageFolderType.Internal).getAbsolutePath());
 
         File dir = JmeSystem.getStorageFolder(JmeSystem.StorageFolderType.Internal);
-        dir = new File(dir, "JME3_DATABASE");
+        dir = new File(dir, "ProjectName");
+        dir = new File(dir, "DatabaseName");
         dir.mkdir();
         System.out.println(dir.getAbsolutePath());        
         DB.root(dir.getAbsolutePath());
