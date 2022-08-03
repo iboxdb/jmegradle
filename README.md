@@ -2,6 +2,9 @@
 
 setup in file **build.gradle**
 
+![](img/JMonkeyEngine3.png)
+
+
 #### Path 1 Run
 ```
 gradle-4.10.2/bin/gradle run
