@@ -35,7 +35,7 @@ gradle-{version}/bin/gradle run
 
 #### using local iBoxDB jar
 
-mvn deploy:deploy-file -Dfile=iboxdb-3.5.jar -DgroupId=iboxdb -DartifactId=iboxdb -Dversion=3.5 -Dpackaging=jar -Durl=file:./repository/ -DrepositoryId=repository -DupdateReleaseInfo=true	
+mvn deploy:deploy-file -Dfile=iboxdb-3.9.1.jar -DgroupId=iboxdb -DartifactId=iboxdb -Dversion=3.9.1 -Dpackaging=jar -Durl=file:./repository/ -DrepositoryId=repository -DupdateReleaseInfo=true	
     
 ```
  maven {
