@@ -49,7 +49,7 @@ public class GuiDemo extends SimpleApplication {
         Button clickMe = myWindow.addChild(new Button("Click Me"));
 
         clickMe.addClickCommands((Command<Button>) (Button source) -> {
-            try (Box box = cube()) {
+            try (IBox box = cube()) {
                 Ason ason = box.d("Table", 1L).replace(Ason.class);
                 Long l = ason.set(Count);
                 if (l == null) {

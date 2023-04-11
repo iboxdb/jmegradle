@@ -8,7 +8,7 @@ public class App {
 
     public static final AutoBox auto = config();
 
-    public static Box cube() {
+    public static IBox cube() {
         return auto.cube();
     }
 
