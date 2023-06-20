@@ -24,9 +24,9 @@ dependencies {
  
     implementation 'iboxdb:iboxdb:3.9.2'  
 
-    implementation 'org.jmonkeyengine:jme3-core:3.5.2-stable'
-    implementation 'org.jmonkeyengine:jme3-desktop:3.5.2-stable'
-    implementation 'org.jmonkeyengine:jme3-lwjgl:3.5.2-stable'
+    implementation 'org.jmonkeyengine:jme3-core:3.6.0-stable'
+    implementation 'org.jmonkeyengine:jme3-desktop:3.6.0-stable'
+    implementation 'org.jmonkeyengine:jme3-lwjgl:3.6.0-stable'
 
     implementation 'com.simsilica:lemur:1.16.0'
     implementation 'com.simsilica:lemur-proto:1.13.0'
