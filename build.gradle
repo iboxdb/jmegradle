@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
  
-    implementation 'iboxdb:iboxdb:3.9.1'  
+    implementation 'iboxdb:iboxdb:3.9.2'  
 
     implementation 'org.jmonkeyengine:jme3-core:3.5.2-stable'
     implementation 'org.jmonkeyengine:jme3-desktop:3.5.2-stable'
